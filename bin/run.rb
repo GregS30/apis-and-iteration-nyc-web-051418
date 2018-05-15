@@ -2,10 +2,15 @@
 
 require_relative "../lib/api_communicator.rb"
 require_relative "../lib/command_line_interface.rb"
+require_relative "../lib/movie_search.rb"
 
 welcome
-character = get_character_from_user
+choice = get_choice
 
-puts get_character_movies_from_api(character)
-
-#show_character_movies(character)
+if choice == "1"
+  episode_number = get_movie_from_user
+  show_episode_details(episode_number)
+else
+  character = get_character_from_user
+  show_character_movies(character)
+end
