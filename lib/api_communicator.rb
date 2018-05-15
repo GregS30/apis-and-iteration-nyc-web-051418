@@ -19,7 +19,6 @@ def get_character_movies_from_api(character)
   character_hash = JSON.parse(all_characters)
   film_urls = get_film_urls(character_hash, character)
 
-  parse_films(film_urls)
   parse_character_movies(parse_films(film_urls))
 end
 
